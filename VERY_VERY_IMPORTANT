@@ -1,0 +1,10 @@
+{
+  "id": "my-gd-recorder",
+  "version": "1.0.0",
+  "name": "My GD Recorder",
+  "developer": "YourName",
+  "description": "Simple auto-clicker bot.",
+  "dependencies": {
+    "geode": ">=2.0.0"
+  }
+}
