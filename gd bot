@@ -1,0 +1,25 @@
+#include <Geode/Geode.hpp>
+#include <Geode/modify/MenuLayer.hpp>
+
+using namespace geode::prelude;
+
+// Класс-модификатор. Символ $ перед названием говорит Geode,
+// что мы хотим изменить существующий класс MenuLayer из оригинальной игры.
+class $modify(MyCustomBot, MenuLayer) {
+    // Переопределяем метод инициализации меню
+    bool init() {
+        // Сначала вызываем оригинальную логику игры, чтобы меню вообще появилось
+        if (!MenuLayer::init()) {
+            return false;
+        }
+        
+        // Здесь пишется логика вашего бота
+        log::info("My Custom GD Bot has loaded successfully!");
+        
+        // Пример вывода координат игрока (если бы он был на этом экране)
+        CCPoint playerPos = this->m_playerPosition; 
+        log::info("Player is at: {}", playerPos);
+
+        return true;
+    }
+};
